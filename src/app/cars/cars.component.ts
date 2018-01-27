@@ -21,7 +21,6 @@ export class CarsComponent implements OnInit {
   }
 
   Create(){
-  	debugger
   	this.router.navigateByUrl('/cars/add')
   }
 

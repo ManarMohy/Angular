@@ -1,25 +1,35 @@
-<form>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Elephant Cars</span>
+    <span class="example-spacer"></span>
+	<button mat-button class="logout" (click)="LogOut('')">LogOut</button>
+</mat-toolbar-row>
+</mat-toolbar>
+
+
+<form class="example-form" #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
 
 <mat-form-field class="example-full-width">
-    <input type="name" matInput placeholder="Brand">
+    <input type="name" matInput placeholder="Brand" required="true">
   </mat-form-field>
-
+<br>
 <mat-form-field>
   <mat-select placeholder="Country">
     <mat-option>
     </mat-option>
   </mat-select>
 </mat-form-field>
-
+<br>
 <mat-form-field>
   <input matInput [matDatepicker]="picker" placeholder="Choose a Year">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
-
+<br>
 <mat-form-field class="example-full-width">
     <input type="url" matInput placeholder="Img URL">
   </mat-form-field>
-
+  <br>
+	<button mat-raised-button color="primary" type="submit">Save</button>
 
 </form>
