@@ -7,29 +7,30 @@
 </mat-toolbar>
 
 
-<form class="example-form" #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
+<form class="example-form">
 
 <mat-form-field class="example-full-width">
-    <input type="name" matInput placeholder="Brand" required="true">
+    <input type="name" matInput placeholder="Brand" required="true" [(ngModel)]="car.brand">
   </mat-form-field>
 <br>
 <mat-form-field>
-  <mat-select placeholder="Country">
-    <mat-option>
+  <mat-select placeholder="Country" [(ngModel)]="car.country">
+    <mat-option *ngFor="let user of users | async">
+    {{ country.name }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 <br>
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a Year">
+  <input matInput [matDatepicker]="picker" placeholder="Choose a Year" [(ngModel)]="car.year">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
 <mat-form-field class="example-full-width">
-    <input type="url" matInput placeholder="Img URL">
+    <input type="url" matInput placeholder="Img URL" [(ngModel)]="car.img">
   </mat-form-field>
   <br>
-	<button mat-raised-button color="primary" type="submit">Save</button>
+	<button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Save</button>
 
 </form>

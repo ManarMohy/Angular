@@ -16,7 +16,6 @@ import { DetailsComponent } from './cars/details/details.component';
 //import { AppLoadModule } from './load.module';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-
 @NgModule({
   declarations: [
     AppComponent,
