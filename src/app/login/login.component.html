@@ -1,0 +1,16 @@
+<form class="example-form">
+  <div class ="center">
+    <h3 class="center">Login</h3>
+    <mat-form-field>
+      <input matInput type ="text" placeholder="Enter Your Name" name="mail">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput type ="password" placeholder="Enter Your pass" name="pass">
+    </mat-form-field>
+    <div class="button-row center">
+      <button mat-raised-button color="accent" (click)="emailLogin(mail, pass)">Log in</button>
+    </div>
+  </div>
+</form>
+<router-outlet></router-outlet>
