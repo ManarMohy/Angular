@@ -3,9 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { CarsComponent } from './cars/cars.component';
 import { CreateComponent } from './cars/create/create.component';
 import { DetailsComponent } from './cars/details/details.component';
-
+import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
+	{
+		path:'',
+		component:LoginComponent
+	},
+
 	{
 		path:'home',
 		component:CarsComponent

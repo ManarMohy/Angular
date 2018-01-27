@@ -1,8 +1,10 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+
 import { AngularFireModule } from 'angularfire2';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service'
+// import { AuthService } from '../auth.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,18 +12,15 @@ import { AuthService } from '../auth.service'
 })
 export class LoginComponent implements OnInit {
     error: any;
+    user: any = {};
+    constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
-    constructor() { }
+  onSubmit(formData) {
 
-  // onSubmit(formData) {
-  //   if(formData.valid) {
-  //     console.log(formData.value);
-  //     this.afAuth.signInWithEmailAndPassword({
-  //       email: formData.value.email,
-  //       password: formData.value.password
-  //     }
-  //   },
-  // }
+    this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.pass).then(d=>{
+      this.router.navigateByUrl('/home')
+    })
+  }
 
   ngOnInit() {
   }

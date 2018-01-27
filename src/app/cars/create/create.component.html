@@ -1,8 +1,25 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Elephant Cars</span>
+<form>
 
-    <span class="example-spacer"></span>
-    <button mat-button>LogOut</button>
+<mat-form-field class="example-full-width">
+    <input type="name" matInput placeholder="Brand">
+  </mat-form-field>
 
-  </mat-toolbar-row>
+<mat-form-field>
+  <mat-select placeholder="Country">
+    <mat-option>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a Year">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <input type="url" matInput placeholder="Img URL">
+  </mat-form-field>
+
+
+</form>
