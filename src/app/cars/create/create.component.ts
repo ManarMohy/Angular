@@ -32,6 +32,25 @@ constructor(private afAuth: AngularFireAuth, private router: Router,private db: 
   }
 
   onSubmit(createForm) {
+  	debugger
       this.db.collection("cars").doc("car").set({...this.car})
+    
   }
 }
+
+// export class LoginComponent implements OnInit {
+//     error: any;
+//     user: any = {};
+//     constructor(private afAuth: AngularFireAuth, private router: Router) { }
+
+//   onSubmit(formData) {
+
+//     this.afAuth.auth.signInWithEmailAndPassword(this.user.email, this.user.pass).then(d=>{
+//       this.router.navigateByUrl('/home')
+//     })
+//   }
+
+//   ngOnInit() {
+//   }
+
+// }
