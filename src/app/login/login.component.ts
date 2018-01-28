@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 // import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
-
+import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { Router } from '@angular/router';
 // import { AuthService } from '../auth.service'

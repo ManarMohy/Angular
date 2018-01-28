@@ -15,6 +15,9 @@ import { CreateComponent } from './cars/create/create.component';
 import { DetailsComponent } from './cars/details/details.component';
 //import { AppLoadModule } from './load.module';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestore } from 'angularfire2/firestore';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     CarsComponent,
     CreateComponent,
     DetailsComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireAuthModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

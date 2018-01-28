@@ -10,25 +10,25 @@
 <form class="example-form">
 
 <mat-form-field class="example-full-width">
-    <input type="name" matInput placeholder="Brand" required="true" [(ngModel)]="car.brand">
+    <input type="name" matInput placeholder="Brand" required="true" [(ngModel)]="car.brand" name="brand">
   </mat-form-field>
 <br>
 <mat-form-field>
-  <mat-select placeholder="Country" [(ngModel)]="car.country">
-    <mat-option *ngFor="let user of users | async">
+  <mat-select placeholder="Country" [(ngModel)]="car.country" name="country">
+    <mat-option *ngFor="let country of countries | async">
     {{ country.name }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 <br>
 <mat-form-field>
-  <input matInput [matDatepicker]="picker" placeholder="Choose a Year" [(ngModel)]="car.year">
+  <input matInput [matDatepicker]="picker" placeholder="Choose a Year" [(ngModel)]="car.year" name="year">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-datepicker #picker></mat-datepicker>
 </mat-form-field>
 <br>
 <mat-form-field class="example-full-width">
-    <input type="url" matInput placeholder="Img URL" [(ngModel)]="car.img">
+    <input type="url" matInput placeholder="Img URL" [(ngModel)]="car.img" name="img">
   </mat-form-field>
   <br>
 	<button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Save</button>

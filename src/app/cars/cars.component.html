@@ -13,11 +13,21 @@
   	<mat-grid-tile>Delete</mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list >
+<mat-grid-list cols="4">
 	<mat-grid-tile *ngFor="let car of cars | async">
       {{ car.brand }}
   </mat-grid-tile>
+  <mat-grid-tile *ngFor="let car of cars | async">
+      {{ car.country }}
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let car of cars | async">
+      {{ car.year }}
+  </mat-grid-tile>
+  <mat-grid-tile *ngFor="let car of cars | async">
+      {{ car.delete }}
+  </mat-grid-tile>
 </mat-grid-list>
+
 
 <form>
 	<button mat-raised-button color="primary" (click)="Create('')">Create New Car</button>
