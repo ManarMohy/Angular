@@ -17,6 +17,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class CreateComponent implements OnInit {
 car : any = [];
 countries:any = [];
+count: number;
 constructor(private afAuth: AngularFireAuth, private router: Router,private db: AngularFirestore) {
 
   this.countries = this.db.collection("countries").valueChanges();
@@ -32,8 +33,8 @@ constructor(private afAuth: AngularFireAuth, private router: Router,private db: 
   }
 
   onSubmit(createForm) {
-  	debugger
-      this.db.collection("cars").doc("car").set({...this.car})
+  	this.count = this.car.length;
+      this.db.collection("cars").doc("count").set({...this.car})
     
   }
 }
